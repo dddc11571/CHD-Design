@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHD Design | 極簡黑白現代主義</title>
+<style>
+/* ------------------ 統一 CSS ------------------ */
+body, html {margin:0;padding:0;font-family:Helvetica, Arial, sans-serif;background:#fff;color:#000;}
+.site-header{position:fixed;width:100%;top:0;left:0;background:#fff;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:12px 24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);}
+.nav-list a{margin:0 12px;text-decoration:none;color:#000;}
+.menu-toggle{display:none;cursor:pointer;}
+.hero{position:relative;height:80vh;overflow:hidden;}
+.hero video{width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;z-index:-1;}
+.hero-inner{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#fff;}
+.section{padding:80px 24px;max-width:1200px;margin:0 auto;}
+.h-center{text-align:center;}
+.fade-up{opacity:0;transform:translateY(20px);transition:all 0.8s ease;}
+.inview{opacity:1;transform:translateY(0);}
+.services-grid, .port-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+.service-card, .port-item{background:#f8f8f8;padding:24px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06);}
+.port-item img{width:100%;display:block;filter:grayscale(100%);transition:0.5s;}
+.port-item img:hover{filter:grayscale(0);}
+.port-caption{position:absolute;bottom:0;left:0;width:100%;padding:12px;background:rgba(0,0,0,0.6);color:#fff;text-align:center;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.contact-grid input, .contact-grid textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #ccc;}
+.btn{padding:12px 24px;background:#000;color:#fff;border:none;border-radius:8px;cursor:pointer;}
+.site-footer{padding:24px;text-align:center;background:#f8f8f8;margin-top:40px;}
+.enter-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:2000;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#fff;transition:opacity 0.6s;}
+.enter-btn{padding:12px 24px;background:#fff;color:#000;border:none;border-radius:8px;cursor:pointer;margin-top:16px;}
+@media(max-width:768px){.menu-toggle{display:block;}.nav-list{display:none;flex-direction:column;background:#fff;position:absolute;top:56px;right:24px;padding:12px;border-radius:8px;}}
+</style>
+</head>
+<body>
+
+<!-- 進入動畫遮罩 -->
+<div class="enter-overlay">
+  <h1>CHD Design</h1>
+  <div class="enter-sub">極簡黑白現代主義 · 帶點溫馨的味道</div>
+  <button class="enter-btn">進入網站</button>
+  <video autoplay muted loop style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;">
+    <source src="assets/videos/intro.mp4" type="video/mp4">
+  </video>
+  <audio autoplay loop>
+    <source src="assets/audio/bgm.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<header class="site-header">
+  <div class="logo">CHD DESIGN</div>
+  <nav class="nav-list">
+    <a href="#home">首頁</a>
+    <a href="#about">關於我們</a>
+    <a href="#services">服務</a>
+    <a href="#flow">服務流程</a>
+    <a href="#portfolio">作品集</a>
+    <a href="#news">新聞報導</a>
+    <a href="#awards">得獎紀錄</a>
+    <a href="#contact">聯絡我們</a>
+  </nav>
+  <div class="menu-toggle">☰</div>
+</header>
+
+<!-- Hero 首頁 -->
+<section class="hero" id="home">
+  <div class="hero-inner fade-up">
+    <h1 class="hero-title">極簡 x 黑白 x 溫度</h1>
+    <p class="hero-sub">Minimalism Black & White Modernism with Warmth</p>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="section">
+  <h2 class="h-center fade-up">關於我們</h2>
+  <p class="fade-up">CHD Design 致力打造極簡黑白現代主義空間，以材質與光影表現溫度，讓家的本質回到純粹與舒適。</p>
+  <div class="fade-up" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+    <div>團隊由設計師、規劃師與監工組成，秉持以使用者為本，透過專業與細節堆疊，落實生活品質。</div>
+    <div><img src="assets/images/about-1.jpg" alt="關於我們圖片" style="border-radius:12px;box-shadow:0 12px 36px rgba(0,0,0,0.08);"></div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="section">
+  <h2 class="h-center fade-up">服務內容</h2>
+  <div class="services-grid">
+    <div class="service-card fade-up"><h4>住宅設計</h4><p class="small">客製化住宅規劃，極簡黑白現代風格。</p></div>
+    <div class="service-card fade-up"><h4>商空設計</h4><p class="small">辦公室、店鋪空間打造獨特體驗。</p></div>
+    <div class="service-card fade-up"><h4>施工統包</h4><p class="small">從設計到施工一條龍完成，精準把控品質。</p></div>
+  </div>
+</section>
+
+<!-- Flow -->
+<section id="flow" class="section">
+  <h2 class="h-center fade-up">服務流程</h2>
+  <div class="timeline" style="display:flex;justify-content:space-around;margin-top:24px;">
+    <div class="fade-up">初談</div>
+    <div class="fade-up">場勘</div>
+    <div class="fade-up">方案提案</div>
+    <div class="fade-up">合約簽訂</div>
+    <div class="fade-up">施工</div>
+    <div class="fade-up">完工交屋</div>
+  </div>
+</section>
+
+<!-- Portfolio -->
+<section id="portfolio" class="section">
+  <h2 class="h-center fade-up">作品集</h2>
+  <div class="port-grid">
+    <div class="port-item fade-up"><img data-src="assets/images/portfolio-1.jpg" alt="作品1"><div class="port-caption">作品1</div></div>
+    <div class="port-item fade-up"><img data-src="assets/images/portfolio-2.jpg" alt="作品2"><div class="port-caption">作品2</div></div>
+  </div>
+</section>
+
+<!-- News -->
+<section id="news" class="section">
+  <h2 class="h-center fade-up">新聞報導</h2>
+  <ul>
+    <li class="fade-up">2025-01-01 CHD Design 入選設計展</li>
+  </ul>
+</section>
+
+<!-- Awards -->
+<section id="awards" class="section">
+  <h2 class="h-center fade-up">得獎紀錄</h2>
+  <ul>
+    <li class="fade-up">2024 最佳室內設計金獎</li>
+  </ul>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section">
+  <h2 class="h-center fade-up">聯絡我們</h2>
+  <form id="contact-form" class="contact-grid fade-up">
+    <input type="text" placeholder="姓名" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="訊息" rows="5" required></textarea>
+    <button type="submit" class="btn">送出</button>
+  </form>
+</section>
+
+<footer class="site-footer">© 2025 CHD Design. All Rights Reserved.</footer>
+
+<script>
+/* ------------------ 統一 JS ------------------ */
+document.addEventListener('DOMContentLoaded',()=>{
+  const overlay=document.querySelector('.enter-overlay');
+  document.querySelector('.enter-btn')?.addEventListener('click',()=>{
+    overlay.style.opacity='0';
+    overlay.style.pointerEvents='none';
+    setTimeout(()=>overlay.remove(),600);
+  });
+
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('inview');}});
+  });
+  document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+
+  const toggleBtn=document.querySelector('.menu-toggle');
+  const navList=document.querySelector('.nav-list');
+  toggleBtn?.addEventListener('click',()=>{
+    navList.style.display=navList.style.display==='flex'?'none':'flex';
+  });
+
+  const contactForm=document.querySelector('#contact-form');
+  contactForm?.addEventListener('submit',e=>{
+    e.preventDefault();
+    alert('訊息已送出，我們將儘快與您聯絡');
+    contactForm.reset();
+  });
+
+  const lazyImgs=document.querySelectorAll('img[data-src]');
+  const lazyObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const img=entry.target;
+        img.src=img.dataset.src;
+        img.removeAttribute('data-src');
+        lazyObserver.unobserve(img);
+      }
+    });
+  });
+  lazyImgs.forEach(img=>lazyObserver.observe(img));
+});
+</script>
+
+</body>
+</html>
